@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\jordb\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\jordb\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+﻿@model PFD_Team3.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+}
+
+
+<style>
+    body {
+        overflow: hidden;
+    }
+    .bg {
+        /*background-color: #eef5ff;*/
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/contact.png);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 500px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    .sign {
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        color: #151e3d;
+        font-weight: bold;
+        font-size: 18px;
+        align-items: center;
+    }
+  
+    .submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: #0d5dba;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    .text-danger{
+        color:red;
+    }
+    .form-control-desc {
+        width: 100%;
+        height: 100px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+    }
+    .form-control-name {
+        width: 100%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+    }
+    .form-control{
+        padding: 15px 35px;
+    }
+
+
+</style>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <div class="section">
+            <div class="form-content">
+                <form class="form-container" asp-action="Create">
+                    <div class="sign">
+                        <h1>
+                            Contact Us!
+                        </h1>
+                        <h4>Fill in your name and message!</h4>
+                    </div>
+                    <div class="input-container">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        @*<div class="form-group">
+                            <label asp-for="ContactID" class="control-label"></label>
+                            <input asp-for="ContactID" class="form-control" />
+                            <span asp-validation-for="ContactID" class="text-danger"></span>
+                        </div>*@
+                        <div class="form-control">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control-name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-control">
+                            <label asp-for="Description" class="control-label"></label>
+                            <textarea asp-for="Description" class="form-control-desc"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-control">
+                            <input type="submit" value="Submit" class="submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

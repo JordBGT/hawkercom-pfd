@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Thank you!";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+
+}
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        overflow:hidden;
+    }
+    .bg {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/happyppl.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    .textbox {
+        text-align: center;
+        padding: 100px 0px;
+        font-size: 50px;
+        color: floralwhite;
+    }
+    .hero-btn {
+        margin-left: 10px;
+        padding: 9px 25px;
+        background-color: #d4af37;
+        /*background-color: rgba(195, 7, 63, 1);*/
+        /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        color: #000000;
+        transition: all 0.3s ease 0s;
+    }
+
+        .hero-btn:hover {
+            text-decoration: none;
+            color: #FFFFFF;
+            background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+        }
+</style>
+<body>
+    <div class="bg">
+        <div class="textbox">
+            <p>
+                Thank you for the feedback! Have a nice day ahead :)
+            </p>
+            <a href="~/Home/Index" class="hero-btn">Back to home!</a>
+        </div>
+    </div>
+</body>
+

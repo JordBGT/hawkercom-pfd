@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+
+}
+<style>
+    .bg {
+        /*background-color: #eef5ff;*/
+        min-height: 89vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/foodbg.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    body {
+        overflow: hidden;
+    }
+</style>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/Login.css">
+    <title>Sign in</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="form-container">
+            <form class="form1" method="post" action="~/Home/Login">
+                <p class="sign" align="center">Log in</p>
+                <br />
+                <input class="un " id="emailLogin" name="emailLogin" type="text" align="center" placeholder="Email">
+                <input class="pass" id="passwordLogin" name="passwordLogin" type="password" align="center" placeholder="Password">
+                <input type="submit" id="btnLogin"
+                       class="myButton submit" align="center" value="Login" />
+                <br />
+                <br />
+                <p style="color:red;" align="center">@TempData["Message"]</p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

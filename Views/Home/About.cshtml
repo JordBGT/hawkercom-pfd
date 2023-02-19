@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "About Us!";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+
+}
+<!DOCTYPE html>
+<html>
+<style>
+    .intro-container {
+        min-height: 100vh;
+        background-color: #eef5ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10%;
+    }
+
+    .intro-container .img-col {
+        max-width: 100%;
+        padding-left: 15%;
+    }
+
+        .intro-container .text-col {
+            font-size: 18px;
+        }
+
+    .intro-container .text-col h1 {
+        text-align: left;
+        font-size: 50px;
+    }
+
+    .purpose-container {
+        min-height: 100vh;
+        background-color: #eef5ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10%;
+    }
+
+    .purpose-container .img-col {
+        max-width: 100%;
+        padding-right: 15%;
+    }
+
+    .purpose-container .text-col {
+        font-size: 18px;
+    }
+
+    .purpose-container .text-col h1 {
+        text-align: left;
+        font-size: 50px;
+    }
+    .how-container {
+        min-height: 100vh;
+        background-color: #eef5ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10%;
+    }
+
+    .how-container .img-col {
+        max-width: 100%;
+        padding-left: 15%;
+    }
+
+        .how-container .text-col {
+            font-size: 18px;
+        }
+
+    .how-container .text-col h1 {
+        text-align: left;
+        font-size: 50px;
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <link href="css/site.css" rel="stylesheet">
+    <title>About us!</title>
+</head>
+<body>
+    <section>
+        <div class="intro-container">
+            <div class="text-col">
+                <h1>
+                    Who are we?
+                </h1>
+                <br>
+                <p>
+                    We are a team dedicated to find out good food in Singapore and help our hawkers in this difficult situation.
+                    <br>
+                    <br>
+                    Our Goal: To share good food with all of you!
+                </p>
+            </div>
+            <div class="img-col">
+                <img src="/images/team.jpeg" alt="team-image" width = 600 height = 400>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="purpose-container">
+            <div class="img-col">
+                <img src="/images/affectedhawkersjpg.jpg" alt="affectedhawkers" width = 600 height = 400>
+            </div>
+            <div class="text-col">
+                <h1>
+                    Our motivation
+                </h1>
+                <br>
+                <p>
+                    Hawkers are hit heavily by the restrictions imposed by the circuit breaker rules due to the pandemic.
+                    Less people patronise these stalls and rely more on online deliveries platforms such as Grabfood or FoodPanda.
+                    Hawkers who are not doing well cannot afford the expenses of having these online food deliveries platforms and thus
+                    business are heavily affected. <br><br>
+                    Therefore, we are trying to reach out to people and publicise on stalls that
+                    are not performing as well during these tough times, in hope that more people will be aware of these stalls and come down to support
+                    them.
+                </p>
+            </div>
+    </section>
+    <section>
+        <div class="how-container">
+            <div class="text-col">
+                <h1>
+                    Lending a helping hand
+                </h1>
+                <br>
+                <p>
+                    Navigate around our page and find stalls you might be interested in. Head down to these stalls instead of using food delivery platforms.
+                    Bring along your friends to patronise the stall together. Using our feed page, share with us and the public on how the stall was.
+                    Together, we can bring more publicity about these stalls and share good food around!
+                </p>
+            </div>
+            <div class="img-col">
+                <img src="/images/helpinghawkers.jpg" alt="helpinghawkers" width = 600 height = 400>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

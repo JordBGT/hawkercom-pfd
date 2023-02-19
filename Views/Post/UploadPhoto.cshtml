@@ -1,0 +1,84 @@
+﻿@model PFD_Team3.Models.Post
+
+@{
+    ViewData["Title"] = "UploadPhoto";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+}
+
+<h1>UploadPhoto</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UploadPhoto">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="PostID" class="control-label"></label>
+            <input asp-for="PostID" class="form-control" />
+            <span asp-validation-for="PostID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserID" class="control-label"></label>
+            <input asp-for="UserID" class="form-control" />
+            <span asp-validation-for="UserID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HawkerName" class="control-label"></label>
+            <input asp-for="HawkerName" class="form-control" />
+            <span asp-validation-for="HawkerName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HawkerStore" class="control-label"></label>
+            <input asp-for="HawkerStore" class="form-control" />
+            <span asp-validation-for="HawkerStore" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Rating" class="control-label"></label>
+            <input asp-for="Rating" class="form-control" />
+            <span asp-validation-for="Rating" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>*@
+            @*<div class="form-group row">
+            <label asp-for="fileToUpload"
+                   class="ch">
+                New Photo (jpg format)
+            </label>
+            <div class="col-sm-9">
+                <input asp-for="fileToUpload" accept="image/jpeg" />
+            </div>
+        </div>*@
+            @*<div class="form-group">
+                <label asp-for="FileSubmitted" class="control-label"></label>
+                <input type ="file" asp-for="FileSubmitted" readonly class="form-control" />
+                <span asp-validation-for="FileSubmitted" class="text-danger"></span>
+            </div>*@
+
+            <div class="form-group">
+                <input type="file" asp-for="fileToUpload" class="form-control" />
+                <span asp-validation-for="fileToUpload"
+                      class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

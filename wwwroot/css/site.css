@@ -1,0 +1,52 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+
+/*Index*/
+
+/*.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 62px;
+    font-weight: bold;
+}
+
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 30px;
+    color: #fff;
+    font-style: italic;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    background: linear-gradient(to right, #ff105f,#ffad06);
+    transition: 1s;
+}*/

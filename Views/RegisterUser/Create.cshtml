@@ -1,0 +1,116 @@
+﻿@model PFD_Team3.Models.User
+
+<!--@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Create</h1>
+    <h4>User</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>-->
+                @*<div class="form-group">
+                        <label asp-for="UserId" class="control-label"></label>
+                        <input asp-for="UserId" class="form-control" />
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>*@
+
+                <!--<div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Pwd" class="control-label"></label>
+                    <input asp-for="Pwd" class="form-control" />
+                    <span asp-validation-for="Pwd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>-->
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+
+}
+<style>
+    .bg {
+        /*background-color: #eef5ff;*/
+        min-height: 89vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/foodbg.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    body {
+        overflow: hidden;
+    }
+</style>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/Login.css">
+    <title>Register Account</title>
+</head>
+<body>
+    <div class="bg">
+        <div class="form-container">
+
+            <p class="sign" align="center">Register User</p>
+            <br />
+
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                    <label asp-for="UserId" class="control-label"></label>
+                    <input asp-for="UserId" class="form-control" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>*@
+
+                <div class="form-group">
+                    @*<label asp-for="UserName" class="control-label"></label>*@
+                    <input asp-for="UserName" class="un " placeholder="Username" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Email" class="control-label"></label>*@
+                    <input asp-for="Email" class="un " placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @*<label asp-for="Pwd" class="control-label"></label>*@
+                    <input asp-for="Password" class="pass" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <input type="submit" id="btnLogin"
+                       class="myButton submit" align="center" value="Create" />
+                <br />
+                <br />
+                <p style="color:red;" align="center">@TempData["Message"]</p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

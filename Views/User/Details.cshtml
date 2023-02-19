@@ -1,0 +1,104 @@
+﻿@model PFD_Team3.Models.UserViewModel
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+}
+
+<style>
+    .bg {
+        /*background-color: #eef5ff;*/
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/contact.png);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+
+    button {
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    button {
+        margin-left: 10px;
+        padding: 9px 25px;
+        background-color: #d4af37;
+        /*background-color: rgba(195, 7, 63, 1);*/
+        /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        color: #000000;
+        transition: all 0.3s ease 0s;
+    }
+    .userpicture {
+        height: 250px;
+    }
+    .ch, h1 {
+        color: #d4af37;
+    }
+    .page-details{
+        padding-left:10px;
+    }
+    .form-group-col{
+        display: flex;
+        flex-direction: column;
+    }
+    .item {
+        padding: 10px 0px;
+    }
+</style>
+
+
+@*<fieldset style="background-color: #151e3d;">*@
+    @*<div class="form-group row">
+        <label asp-for="UserID" class="ch">UserID: </label>
+        <a class="cc">@Html.Display("UserID")</a>
+    </div>
+    <br />*@
+<body>
+    <div class="bg">
+        <div class="page-details">
+            <h1> Your User Profile</h1>
+            <div class="form-group row">
+                <label asp-for="UserName" class="ch">Username: </label>
+                <a class="cc">@Html.Display("UserName")</a>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <label asp-for="Email" class="ch">Email Address: </label>
+                <a class="cc">@Html.Display("Email")</a>
+            </div>
+            <br />
+
+            <div class="form-group row">
+                <label asp-for="Password" class="ch">Password: </label>
+                <a class="cc"> @Html.Display("Password")</a>
+            </div>
+            <br />
+
+            @*<div class="form-group row">
+                <label asp-for="Photo" class="ch">Profile Picture</label>
+                <div class="col-sm-9">
+                    <img class="userpicture"src="~/images/@Model.Photo" />
+                </div>
+            </div>*@
+
+
+            <div class="form-group-col">
+                <div class="item">
+                    <a asp-action="Edit" asp-controller="User"
+                       asp-route-id="@Model.UserID"><button>Edit Profile</button></a>
+                </div>
+                @*<div class="item">
+                    <a asp-action="UploadPhoto" asp-controller="User"
+                       asp-route-id="@Model.UserID"><button>Change Profile Picture</button></a>
+                </div>*@
+            </div>
+        </div>
+    </div>
+</body>

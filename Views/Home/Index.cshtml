@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Welcome!";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+
+}
+
+<!DOCTYPE html>
+<style>
+</style>
+<html>
+<style>
+    body {
+        overflow: hidden;
+    }
+    .bg {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/hawker-food-hero-image-image-credit-visit-singapore.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+    }
+    .text-box {
+        width: 90%;
+        color: #fff;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .text-box h1 {
+        font-size: 62px;
+        font-weight: bold;
+    }
+
+    .text-box p {
+        margin: 10px 0 40px;
+        font-size: 30px;
+        color: #fff;
+        font-style: italic;
+    }
+
+    .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 12px 34px;
+        font-size: 13px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .hero-btn:hover {
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #fff;
+        background: linear-gradient(to right, #ff105f,#ffad06);
+        transition: 1s;
+    }
+</style>
+<head>
+    <meta charset="utf-8">
+    <link href="css/site.css" rel="stylesheet">
+    <title>About us!</title>
+</head>
+<body>
+    <section class="bg">
+        <div class="text-box">
+            <h1>HawkerCom</h1>
+            <p>Discover the hawker difference</p>
+            <a href="~/Home/About" class="hero-btn">Know more about Us</a>
+        </div>
+    </section>
+</body>
+</html>

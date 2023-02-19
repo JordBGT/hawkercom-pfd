@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PFD_Team3.Models.PostViewModel>
+
+@{
+    ViewData["Title"] = "PostDetails";
+    Layout = "~/Views/Shared/_Menu.cshtml";
+}
+
+<style>
+    .bg {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/images/camera.jpg);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    .h3 {
+        color: black;
+        text-align: center;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        max-height: 200vh;
+        padding: 25px;
+    }
+
+    .card {
+        background-color: #F8F0E3; 
+        width: 700px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+
+    .card .text {
+        padding: 0 20px 20px;
+    }
+
+    .card .text > button {
+        background: gray;
+        border: 0;
+        color: white;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .posts {
+        margin: auto;
+        width: 50%;
+    }
+</style>
+@{
+    if (Context.Session.GetString("Role") != null)
+    {
+        <h3 class="h3">Welcome, @ViewData["UserName"]</h3>
+    }
+}
+<div class="bg">
+
+    <div class="posts">
+        @foreach (var item in Model)
+        {
+            <div class="cards">
+                <article class="card">
+                    @{ string imageFileName = item.FileSubmitted + ".jpg"; }
+                    <img src="~/images/@imageFileName"
+                         style="width:700px" />
+                    <div class="text">
+                        <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+                        <h4>Posted By:</h4> @Html.DisplayFor(modelItem => item.UserName)
+                        <p>
+                            <h4>Hawker Centre:</h4> @Html.DisplayFor(modelItem => item.HawkerName)
+                        </p>
+                        <p>
+                            <h4>Hawker Stall:</h4> @Html.DisplayFor(modelItem => item.HawkerStore)
+                        </p>
+                        <p>
+                            <h4>Ratings:</h4> @Html.DisplayFor(modelItem => item.Rating)/5
+                        </p>
+                        <br />
+                        <p>
+                            <h4>Description:</h4>
+                        @Html.DisplayFor(modelItem => item.Description)
+                        </p>
+                    </div>
+                </article>
+            </div>
+        }
+    </div>
+
+</div>

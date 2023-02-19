@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<style>
+    li,
+    a,
+    button {
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        color: #edf0f1;
+    }
+
+    header {
+        background-color: #151e3d;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 5%;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        border-bottom: 1px solid #333333;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .nav-links {
+        list-style: none;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        padding: 0px 20px;
+    }
+
+    .nav-links li a {
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav-links li a:hover {
+        color: #d4af37;
+    }
+
+    button {
+        margin-left: 10px;
+        padding: 9px 25px;
+        background-color: #d4af37;
+        /*background-color: rgba(195, 7, 63, 1);*/
+        /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        color: #000000;
+        transition: all 0.3s ease 0s;
+    }
+
+    button:hover {
+        background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+        color: #FFFFFF;
+    }
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: inherit;
+        font-family: inherit; /* Important for vertical align on mobile phones */
+        margin: 0; /* Important for vertical align on mobile phones */
+    }
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+</style>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header class="navbar">
+        <img class="logo" src="~/images/HawkerComLogo.png" alt="logo" />
+        <nav>
+            <ul class="nav-links">
+                <li><a href="~/Home/Index">HOME</a></li>
+                <li><a href="~/Home/FoodArticle">FOOD ARTICLES</a></li>
+                <li><a href="~/Post/PostDetails">BLOG</a></li>
+                <li><a href="~/Contact/Create">CONTACT US</a></li>
+                @{
+                    if (Context.Session.GetString("Role") != null)
+                    {
+                        @*<a class="cta" href="~/RegisterUser/Create"><button>ACCOUNT</button></a>*@
+                        <li>
+                            <div class="dropdown">
+                                <a href="#">ACCOUNT</a>
+                                <div class="dropdown-content">
+                                    <a href="~/User/Details">ACCOUNT DETAILS</a>
+                                    <a href="~/Post/Create">CREATE POST</a>
+                                    <a asp-controller="Home" asp-action="LogOut">LOG OUT</a>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                    else
+                    {
+                        <a class="cta" href="~/RegisterUser/Create"><button>REGISTER</button></a>
+                        <a class="cta" href="~/Home/Login"><button>LOGIN</button></a>
+                    }
+                }
+
+            </ul>
+        </nav>
+            
+    </header>
+    @RenderBody()
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // define all UI variable
+        const navToggler = document.querySelector('.nav-toggler');
+        const navMenu = document.querySelector('.site-navbar ul');
+        const navLinks = document.querySelectorAll('.site-navbar a');
+
+        // load all event listners
+        allEventListners();
+
+        // functions of all event listners
+        function allEventListners() {
+            // toggler icon click event
+            navToggler.addEventListener('click', togglerClick);
+            // nav links click event
+            navLinks.forEach(elem => elem.addEventListener('click', navLinkClick));
+        }
+
+        // togglerClick function
+        function togglerClick() {
+            navToggler.classList.toggle('toggler-open');
+            navMenu.classList.toggle('open');
+        }
+
+        // navLinkClick function
+        function navLinkClick() {
+            if (navMenu.classList.contains('open')) {
+                navToggler.click();
+            }
+        }
+    </script>*@
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
